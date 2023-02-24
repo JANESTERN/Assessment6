@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="logo">
+      <img src="https://cdn1.expresscomputer.in/wp-content/uploads/2021/03/24172554/EC_Railway_Parcel_Management_System_PMS_750.jpg" alt="">
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submitparcel()">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name"><br>
+      <span class="errors" *ngIf="!form.get('name')?.valid && form.get('name')?.touched">
+        Please Enter a Valid Name
+      </span>
+      <label for="email">Email</label>
+      <input type="email" formControlName="email"><br>
+      <span class="errors" *ngIf="!form.get('email')?.valid && form.get('email')?.touched">
+        Please Enter a Valid Email Address
+      </span>
+      <label for="destination">Destination</label>
+      <input type="text" formControlName="destination">
+      <span class="errors" *ngIf="!form.get('destination')?.valid && form.get('destination')?.touched">
+        Please Enter a Valid Destination
+      </span>
+      <button type="submit"> Submit</button>
+    </form>
+  </div>
